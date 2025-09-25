@@ -1,11 +1,11 @@
 import { Route,Routes,Navigate } from 'react-router'
-import Dashboard from './pages/dashboard/dashboard'
 import './App.css'
 import Drivers from './component/dashboard/drivers/Drivers'
 import RoutesPage from './component/dashboard/routes/RoutesPage'
 import Statistics from './component/dashboard/statistics/Statistics'
 import LoginPage from './pages/Login'
 import RequireAuth from './helpers/RequirAuth'
+import Dashboard from './pages/dashboard/Dashboard'
 
 
 function App() {
