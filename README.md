@@ -87,21 +87,14 @@ Password: admin123
 
 Any other credentials will be rejected.
 
-📂 Project Structure
-src/
- ┣ assets/         # Images & icons
- ┣ components/     # Reusable components
- ┣ pages/          # Pages (Login, Dashboard, Drivers, Routes, Stats)
- ┣ context/        # Context API (if used)
- ┣ utils/          # Helper functions (Validation, Auth utils)
- ┣ App.tsx
- ┣ main.tsx
+
 
 🚀 Run Locally
 
 Clone the repo:
 
-git clone https://github.com/lotfybasemmomamed/driver-dashboard-react.git
+git clone https://github.com/lotfybasemmomamed/driver-dashboard-react.git 
+
 cd driver-dashboard-react
 
 
