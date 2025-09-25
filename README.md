@@ -89,7 +89,7 @@ Any other credentials will be rejected.
 
 
 
-🚀 Run Locally
+ Run Locally
 
 Clone the repo:
 
