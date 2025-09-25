@@ -11,12 +11,20 @@ import {
 import { useWindowWidth } from "../../../context/WindowContext.jsx";
 import { useState, useEffect, useRef } from "react";
 import { useMenuBar } from "../../../context/MenuBarContext.jsx";
+import { useNavigate } from "react-router";
 
 function TopBar() {
   const { menuBar, setMenuBar } = useMenuBar();
+  const navigate = useNavigate();
+
   const { windowWidth } = useWindowWidth();
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
+  
+  function handleLogout() {
+    localStorage.removeItem("user");
+    navigate("/login");
+  }
 
   // close dropp down when click outside
   useEffect(() => {
@@ -40,12 +48,15 @@ function TopBar() {
           } `}
         >
           {menuBar && windowWidth > 768 && (
-            < div onClick={()=>window.location.pathname="dashboard"} className="flex items-center gap-2 cursor-pointer">
+            <div
+              onClick={() => (window.location.pathname = "dashboard")}
+              className="flex items-center gap-2 cursor-pointer"
+            >
               <span className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-500 text-white font-bold shadow-md">
                 B
               </span>
               <span className="text-lg font-bold text-white">Dashboard</span>
-            </ div>
+            </div>
           )}
           <button className="p-2 hover:bg-gray-100 rounded">
             <FontAwesomeIcon
@@ -104,7 +115,7 @@ function TopBar() {
                 Settings
               </button>
               <button
-                // onClick={handleLogout}
+                onClick={handleLogout}
                 className="flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-gray-100 w-full text-left"
               >
                 <FontAwesomeIcon icon={faSignOutAlt} /> Logout
