@@ -1,16 +1,131 @@
-# React + Vite
+ Driver Dashboard (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Admin-only management system built with React + Vite.
+It allows the admin to manage drivers, routes, and view system statistics.
+This project is designed mainly for practicing authentication, protected routes, and dashboard design.
 
-Currently, two official plugins are available:
+## Tech Stack & Libraries
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project is built using:
 
-## React Compiler
+- React 18 – UI library.
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Vite – Development & build tool.
 
-## Expanding the ESLint configuration
+- TailwindCSS – Responsive styling.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React Router v6 – Routing & Protected Routes.
+
+- localStorage – Store login session.
+
+## Validation:
+
+- zod + react hook form (for forms & validation).
+
+- Font Awesome – For icons.
+
+- Recharts – For statistics & charts.
+
+## Features
+ 
+- Admin-only login with email & password.
+
+- Protected dashboard pages (accessible only when logged in).
+
+- Logout clears session from localStorage.
+
+## Driver Management
+
+- Add a new driver (with validation).
+
+- View a list of drivers.
+
+- Driver details page with assigned routes.
+
+- Delete a driver.
+
+- Update driver info (future enhancement).
+
+## Route Management
+
+- Add a new route with:
+
+Name
+
+Origin & Destination
+
+Start & End time
+
+Status (Assigned, Unassigned, In Progress)
+
+Priority (High, Medium, Low)
+
+Notes
+
+- View a list of routes.
+
+- Route details page.
+
+
+## Statistics
+
+- Total drivers count.
+
+- Number of active routes.
+
+- Completed vs In-progress routes.
+
+- Can be extended with charts/graphs (Recharts).
+
+## Admin Credentials
+
+To log in:
+
+Email: admin@123.com
+
+Password: admin123
+
+Any other credentials will be rejected.
+
+📂 Project Structure
+src/
+ ┣ assets/         # Images & icons
+ ┣ components/     # Reusable components
+ ┣ pages/          # Pages (Login, Dashboard, Drivers, Routes, Stats)
+ ┣ context/        # Context API (if used)
+ ┣ utils/          # Helper functions (Validation, Auth utils)
+ ┣ App.tsx
+ ┣ main.tsx
+
+🚀 Run Locally
+
+Clone the repo:
+
+git clone https://github.com/lotfybasemmomamed/driver-dashboard-react.git
+cd driver-dashboard-react
+
+
+- Install dependencies:
+npm install
+
+
+- Run development server:
+npm run dev
+
+
+
+## Validation
+
+- Login form:
+
+Valid email format.
+
+Password matches admin credentials.
+
+- Driver/Route forms:
+
+Required fields (name, status, etc.).
+
+Valid email/phone (for drivers).
+
+Route status & priority must be selected.
